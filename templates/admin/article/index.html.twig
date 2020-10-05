@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Liste des articles
+{% endblock %}
+
+{% block body %}
+    <h1>Liste des articles : {{ articles|length }}</h1>
+
+    <a href="{{ path('admin_article_add') }}" class="btn btn-success">
+        Nouvel article
+    </a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Catégorie</th>
+            <th>Titre</th>
+            <th>Date de publication</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.category.name }}</td>
+                <td>{{ article.title }}</td>
+                <td>
+                    {% if article.publishedAt is not null %}
+                        {{ article.publishedAt|date('d/m/Y') }}
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="#" class="btn btn-info">
+                        Modifier
+                    </a>
+                    <a href="#" class="btn btn-danger">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

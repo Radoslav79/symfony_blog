@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Supprimer une catégorie</h1>
+
+    {{ form_start(delete_form) }}
+
+        {{ form_row(delete_form.confirmation, {
+            label: 'Je confirme la suppression de la catégorie' ~ category.name
+        }) }}
+
+    <button type="submit" class="btn btn-danger">
+        Supprimer
+    </button>
+
+    {{ form_end(delete_form) }}
+{% endblock %}
+
