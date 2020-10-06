@@ -11,11 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7af111e-dd99-4dc4-ba44-4a486f39e4d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Twig HTML" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,6 +167,16 @@
       <command value="symfony make:form category category" />
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Article.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/symfony_blog/Entity/Article.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Article.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -169,7 +187,8 @@
       <updated>1601547992660</updated>
       <workItem from="1601547993773" duration="12162000" />
       <workItem from="1601623242974" duration="20140000" />
-      <workItem from="1601881615891" duration="21681000" />
+      <workItem from="1601881615891" duration="22840000" />
+      <workItem from="1601967757516" duration="8847000" />
     </task>
     <servers />
   </component>
@@ -186,12 +205,21 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="207" y="180" key="#PHP" timestamp="1601972031666">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="207" y="180" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1601972031666" />
     <state x="84" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601560826562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="84" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601560826562" />
+    <state x="229" y="292" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601972900314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="229" y="292" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601972900314" />
     <state width="920" height="745" key="GridCell.Tab.0.bottom" timestamp="1601651116355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -216,10 +244,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="256" y="248" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601563527016" />
-    <state x="0" y="170" key="SettingsEditor" timestamp="1601628114454">
+    <state x="0" y="170" key="SettingsEditor" timestamp="1601911032054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="170" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601628114454" />
+    <state x="0" y="170" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601911032054" />
     <state x="148" y="245" width="672" height="677" key="run.anything.popup" timestamp="1601635500842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

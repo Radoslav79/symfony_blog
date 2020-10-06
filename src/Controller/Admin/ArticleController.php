@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
+use App\Entity\Category;
 use App\Form\ArticleType;
+use App\Form\ConfirmationType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -77,7 +79,7 @@ class ArticleController extends AbstractController
         // Le formulaire va directement modifier l'objet
         $form->handleRequest($request);
 
-        if ($form->isSubimitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             /**
              * On a pas besoin d'appeler $form->getData()
              *      -> l'objet $article est directement modifié par le formulaire
@@ -91,6 +93,64 @@ class ArticleController extends AbstractController
         return $this->render('admin/article/edit.html.twig', [
             'article' => $article,
             'article_form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/delete", name="delete")
+     * On récupère les arguments par "autowiring" (auto cablage)
+     *  -> Symfony lit notre code pour nous envoyer les arguments demandés
+     */
+    public function delete(Article $article, Request $request, EntityManagerInterface $em)
+    {
+        $form = $this->createForm(ConfirmationType::class);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            // supprimer
+            $em->remove($article);
+            // exécuter
+            $em->flush();
+
+            /**
+             * sprintf() sert à formatter une chaine de caratères
+             * le %s est un emplacement pour une chaine de caractères
+             */
+            $this->addFlash('info', sprintf('L\'article "%s" a été supprimé.', $article->getTitle()));
+            return $this->redirectToRoute('admin_article_list');
+        }
+
+        return $this->render('admin/article/delete.html.twig', [
+            'delete_form' => $form->createView(),
+            'article' => $article,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/publish/{token}", name="publish")
+     * le paramètre token servira à vérifier que l'action a bien été demandée par
+     * l'administrateur connecté (protection contre les attaques CSRF)
+     */
+    public function publish(Article $article, string $token, EntityManagerInterface $em)
+    {
+        /**
+         * On doit nommer les jetons CSRF
+         * Symfony va comparer le jeton qu'il a enregistré en
+         * session avec ce que l'on a récupéré dans l'adresse
+         */
+        if ($this->isCsrfTokenValid('article-publish', $token) === false) {
+            $this->addFlash('danger', 'Le jeton est invalide.');
+            return $this->redirectToRoute('admin_article_edit', [
+                'id' => $article->getId(),
+            ]);
+        }
+
+        $article->setPublishedAt(new \DateTime());
+        $em->flush();
+
+        $this->addFlash('success', 'L\article a été publié');
+        return $this->redirectToRoute('admin_article_edit', [
+            'id' => $article->getId(),
         ]);
     }
 }

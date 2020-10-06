@@ -2,8 +2,11 @@
 
 namespace App\Entity;
 
+use App\Form\ConfirmationType;
 use App\Repository\ArticleRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -94,4 +97,6 @@ class Article
 
         return $this;
     }
+
+
 }

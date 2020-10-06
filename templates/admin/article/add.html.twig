@@ -7,16 +7,7 @@
 {% block body %}
     <h1>Ajouter un article</h1>
 
-    {{ form_start(article_form) }}
-
-        {{ form_row(article_form.category, {label: 'Catégorie:'}) }}
-        {{ form_row(article_form.title, {label: 'Titre'}) }}
-        {{ form_row(article_form.content, {label: 'Contenu'}) }}
-
-        <button type="submit" class="btn btn-success">
-            Enregistrer
-        </button>
-
-    {{ form_end(article_form) }}
+    {# On inclue le formulaire des articles #}
+    {% include 'admin/article/_article_form.html.twig' %}
 {% endblock %}
 
