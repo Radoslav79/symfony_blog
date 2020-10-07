@@ -41,7 +41,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     # droit d'accès de manière globlae
     access_control:
+        # Toutes les routes commençant par /admin nécessitent le ROLE_ADMIN
         # (^/) = doit commencer par ce qui suit :
         # tableau
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/profile, roles: ROLE_USER }

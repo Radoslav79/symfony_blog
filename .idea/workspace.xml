@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7af111e-dd99-4dc4-ba44-4a486f39e4d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
@@ -187,7 +186,7 @@
       <workItem from="1601623242974" duration="20140000" />
       <workItem from="1601881615891" duration="22840000" />
       <workItem from="1601967757516" duration="15401000" />
-      <workItem from="1602054271233" duration="4575000" />
+      <workItem from="1602054271233" duration="6553000" />
     </task>
     <servers />
   </component>
