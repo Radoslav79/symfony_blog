@@ -4,10 +4,13 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"email"}, message="Cette adresse email est déjà utilisée.")
  */
 class User implements UserInterface
 {
@@ -20,6 +23,9 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="Adresse email manquante.")
+     * @Assert\Email(message="Veuillez indiquer une adresse email valide")
+     * @Assert\Length(max="180", maxMessage="L'adresse email ne peut pas contenir plus de 180 caractères")
      */
     private $email;
 
