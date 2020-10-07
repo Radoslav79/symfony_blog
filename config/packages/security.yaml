@@ -1,8 +1,10 @@
 security:
+    # Gestion des algorithmes de hashage des mots de passe
     encoders:
         App\Entity\User:
             algorithm: auto
 
+    # Outils de récupération des utilisateurs depuis la session
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -10,13 +12,24 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+
+    # Règles de sécurité générales de l'application
     firewalls:
         dev:
+            # sorte de faux parfeu
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: lazy
             provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                # précise la déconnexion
+                path: app_logout
+                # where to redirect after logout = où nous sommes rediriger
+                target: app_login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -26,6 +39,9 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
+    # droit d'accès de manière globlae
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # (^/) = doit commencer par ce qui suit :
+        # tableau
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }
